@@ -216,7 +216,6 @@ class PropensityScore:
         random_state = kwargs.get('random_state',None)
         solver = kwargs.get('solver','lbfgs')
         max_iter = kwargs.get('max_iter',100)
-        multi_class = kwargs.get('multi_class','auto')
         warm_start = kwargs.get('warm_start',False)
         n_jobs = kwargs.get('n_jobs',None)
         l1_ratio = kwargs.get('l1_ratio',None)
@@ -273,7 +272,7 @@ class PropensityScore:
         mod = FastLogit(penalty=penalty,dual=dual,tol=tol,C=C,fit_intercept=fit_intercept,
                         intercept_scaling=intercept_scaling,class_weight=class_weight,
                         random_state=random_state,solver=solver,max_iter=max_iter,
-                        multi_class=multi_class,warm_start=warm_start,n_jobs=n_jobs,l1_ratio=l1_ratio)
+                        warm_start=warm_start,n_jobs=n_jobs,l1_ratio=l1_ratio)
 
         y  = self.outcome
         x0 = self.main_vars.copy()
